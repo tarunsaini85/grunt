@@ -1,0 +1,166 @@
+@import '_variables';
+@import '_mixins';
+@import '_extends';
+
+
+.lbCntWrap_ims{
+	.qupFrmCnt{
+		margin:0;
+		padding:$form-container-padding;
+		position:relative;
+		
+		form{
+			width:$form-width;
+			margin:0 auto;
+			padding:0;
+			
+			a{
+				color:$lightBox-linkColor
+			}
+		}
+		
+		.w150{width:150px}
+		.w200{width:200px}
+		
+		.row{
+			width:100%;
+			overflow:hidden; 
+			padding:$form-row-padding; 
+			font-family:$font-family;
+			font-size:$form-row-fontSize; 
+			color:$form-row-fontColor;
+			
+			.rowL{
+				width:$qup-row-left-width;
+				font-size:$qup-row-left-fontSize;
+				line-height:$qup-row-left-lineHeight;
+				text-align:right;
+				float:left;
+				
+				@include leftRowLineHeightHack(20);
+			}
+			
+			.rowR{
+				width:$qup-row-right-width;
+				float:right;
+				
+				span{
+					font-size:$qup-row-right-helpText-fontSize;
+					color:$qup-row-right-helpText-color;
+				}
+				
+				label{
+					margin:$qup-row-right-label-margin;
+				}
+				
+				.rowRL, .rowRR{
+					width:$qup-row-right-sections-width;
+					float:left;
+				}
+				.rowRR{
+					float:right;
+					
+					.icn{
+						background:url(#{$image-path}imsIcns1.png) 0px -26px no-repeat;
+						width:25px;
+						height:12px;
+						display:block;
+						overflow:hidden;
+						float:left
+					}
+					
+					.txt1{
+						width:$qup-row-right-sections-right-width;
+						font-size:$qup-row-right-sections-right-fontSize;
+						color:$qup-row-right-sections-right-color;
+						float:left;
+					}
+				}
+				
+			}
+			
+			.txtBx, .txtAra, .sel1, .sel2, .sel3{
+				@extend %formElementsStyle-qup
+			}
+			
+			.txtBx{
+				width:$qup-textbox-width;
+				padding:7px 3px;
+			}
+			
+			.txtAra{
+				width:$qup-textarea-width;
+				resize:none;
+				padding:$qup-textarea-padding;
+			}
+			
+			.sel1, .sel2, .sel3{
+				width:$qup-select-width-1;
+				padding:$qup-select-padding;
+			}
+			.sel2, .sel3{
+				width:$qup-select-width-2
+			}
+		}
+	}
+}
+/*
+.lbCntWrap_ims .qupFrmCnt .row .rowR .rowRR .txt1{width:160px; font-size:10px; color:#9E9E9E; float:left}
+.lbCntWrap_ims .qupFrmCnt .row .rowR .rowRR .txt1 a{font-size:11px}
+.lbCntWrap_ims .qupFrmCnt .preLod{background:url(../i/loaderS.gif) 0 0 no-repeat; text-indent:20px; height:20px; line-height:20px}
+.lbCntWrap_ims .qupFrmCnt .addFldCnt{border-top:1px dotted #CCC; margin:10px auto; width:90%; overflow:hidden}
+.lbCntWrap_ims .qupFrmCnt .addFldCnt .empDetTxt{float:right; background:#eee; padding:2px 10px; margin:0px 0 5px; display:inline-block; font-size:11px; border-radius:0 0 5px 5px; color:#36F}
+.lbCntWrap_ims .qupFrmCnt .addFldCnt.act .empDetTxt{color:#aaa; cursor:default; outline:none}
+
+.lbCntWrap_ims .qupFrmCnt .addFldCnt .empDetTxtUn{float:right; background:#eee; padding:2px 10px 2px 0px; margin:0px 0 5px; display:inline-block; color:#888; font-size:11px; border-radius:0 0 5px 5px; line-height:12px; width:110px; overflow:hidden; cursor:pointer}
+
+.lbCntWrap_ims .qupFrmCnt .addFldCnt em{ font-style:normal; float:right; padding-top:3px}
+.lbCntWrap_ims .qupFrmCnt .addFldCnt span{ background:#a6d1eb; text-align:center; margin:2px 0 2px 3px; color:#fff; border:1px solid #89bcdb;border-radius:3px; float:right}
+
+.lbCntWrap_ims .qupFrmCnt .addFldCnt span.iplus{width:12px; height:12px;display:inline-block}
+.lbCntWrap_ims .qupFrmCnt .addFldCnt span.imins,.lbCntWrap_ims .qupFrmCnt .addFldCnt.act span.iplus{ display:none}
+.lbCntWrap_ims .qupFrmCnt .addFldCnt.act span.imins{ display:inline-block; width:12px; line-height:10px; padding-bottom:2px}
+
+
+.lbCntWrap_ims .qupFrmCnt form .erLbl{display:none}
+@keyframes vibrate {0% {margin-left : 0px}20% {margin-left : 2px}40% {margin-left : -2px}60% {margin-left : 2px}80% {margin-left : -2px}100% {margin-left : 0px}}
+@-webkit-keyframes vibrate {0% {margin-left : 0px}20% {margin-left : 2px}40% {margin-left : -2px}60% {margin-left : 2px}80% {margin-left : -2px}100% {margin-left : 0px}}
+.lbCntWrap_ims .qupFrmCnt form .txtBx.err, .lbCntWrap_ims .qupFrmCnt form .txtAra.err, .lbCntWrap_ims .qupFrmCnt .row .sel1.err, .lbCntWrap_ims .qupFrmCnt .row .sel2.err, .lbCntWrap_ims .qupFrmCnt .row .sel3.err, .lbCntWrap_ims .qupFrmCnt .row div.err{border:1px solid red; animation:vibrate 400ms;-webkit-animation:vibrate 400ms} .lbCntWrap_ims .qupFrmCnt form i.err{display:block; text-align:left; font-size:11px; font-style:normal; color:red; animation:vibrate 400ms;-webkit-animation:vibrate 400ms}
+.lbCntWrap_ims .qupFrmCnt form i.scc{display:block; text-align:left; font-size:11px; font-style:normal; color:#0C3}
+
+@keyframes lightBoxAnim{0%{opacity:0;margin-top:-10px}40%{margin-top:inherit}100%{opacity:1}}
+@-webkit-keyframes lightBoxAnim{0%{opacity:0;margin-top:-10px}40%{margin-top:inherit}100%{opacity:1}}
+.lbCntWrap_ims .qupFrmCnt{animation:lightBoxAnim 1s;-webkit-animation:lightBoxAnim 1s}
+/* Term & condition css /
+.lbCntWrap_ims .qupFrmCnt .row .termCond input{ margin:0; padding:0; vertical-align:middle}
+.lbCntWrap_ims .qupFrmCnt .row .termCond{ font-size:11px; color:#444; overflow:hidden; margin-bottom:5px}
+.lbCntWrap_ims .qupFrmCnt .row .termCond label,.lbCntWrap_ims .qupFrmCnt .row .termCond a{ line-height:18px; margin-right:4px}
+
+/*Tooltip/
+#tdv,#tifrm { position:absolute; top:-1800px; left:0; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#666}
+#tifrm {overflow:hidden; z-index:9998; border:none !important; margin-left:5px}#tdv {z-index:9999;background:#FFFAE0;border:2px solid #F6EDA1; margin:0 5px; padding:7px}
+@keyframes tipAnimR{0%{opacity:0;left:1100px}60%{opacity:0}100%{opacity:1}}
+@-webkit-keyframes tipAnimR{0%{opacity:0;left:1100px}60%{opacity:0}100%{opacity:1}}
+@keyframes tipAnimL{0%{opacity:0;left:-100px}60%{opacity:0}100%{opacity:1}}
+@-webkit-keyframes tipAnimL{0%{opacity:0;left:-100px}60%{opacity:0}100%{opacity:1}}
+.default {width:200px;border:1px solid #333;}
+.xyzp{position:absolute; width:300px; height:80px; padding-left:10px;}
+.defaultCont {width:200px}
+.closeT { padding:2px; color:red; font-size:12px; cursor:pointer; position:absolute; top:-4px; right:0px}
+.rightar .closeT { right:0px}.leftar .closeT { left:0px}
+#tdv.rightar,#tdv.rightarR{ padding-left:10px;animation:tipAnimR 200ms;-webkit-animation:tipAnimR 200ms}
+#tdv.leftar,#tdv.leftarR{ padding-right:10px;animation:tipAnimL 200ms;-webkit-animation:tipAnimL 200ms}
+#tdv.btmar,#tdv.btmarR { padding-top:10px}
+#tdv.topar,#tdv.toparR{ padding-bottom:10px}
+.rght { width:300px; border:1px solid #F6EDA1; position:relative; background-color:#FFFAE0}
+.rght p{ padding:8px 5px}
+.arrow { background:url(../i/imsIcns1.png) no-repeat 0 -45px; position:absolute; overflow:hidden}
+.rightar .arrow { background-position:0 -45px; width:12px; height:26px; left:-12px; top:1px}
+.rightarR .arrow { background-position:0 -45px; width:12px; height:26px; left:-12px; bottom:1px}
+.leftar .arrow { background-position:-13px -45px; width:12px; height:26px; right:-12px}
+.leftarR .arrow { background-position:-13px -45px; width:12px; height:26px; right:-12px; bottom:1px}
+.topar .arrow { background-position:0px -57px; width:26px; height:13px; bottom:-13px; left:10px}
+.toparR .arrow { background-position:0px -57px; width:26px; height:13px; bottom:-13px; right:10px}
+.btmar .arrow {background-position:0px -45px; width:24px; height:13px; top:-13px; left:10px}
+.btmarR .arrow {background-position:0px -45px; width:24px; height:13px; top:-13px; right:20px}
+*/

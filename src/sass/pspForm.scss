@@ -1,0 +1,85 @@
+@import '_variables';
+@import '_mixins';
+@import '_extends';
+
+.lbCntWrap_ims{
+	.pspFrmCnt{
+		@extend %formContainer;
+		
+		form{
+			@extend %formStyle;
+			
+			a{
+				color:$lightBox-linkColor
+			}
+		}
+		.row{
+			@extend %formRow;
+			padding:10px 0;
+			color:#666;
+			border:1px solid #fff;
+			
+			&.act{
+				background:$pspActive-backgroundColor;
+				border:1px solid $pspActive-borderColor;
+				@include border-radius($pspActive-borderRadius);
+				
+				.rowR h3 label{color:$pspActive-questionText-fontColor}
+			}
+			
+			.rowL{
+				width:$psp-row-left-width;
+				font-size:$psp-row-left-fontSize;
+				line-height:$psp-row-left-lineHeight;
+				text-align:left;
+				float:left
+			}
+			.rowR{
+				width:$psp-row-right-width;
+				float:left;
+				
+				h3{
+					margin:2px 0;
+					padding:0;
+					font-size:$psp-questionText-fontSize;
+					
+					label{
+						cursor:pointer
+					}
+					a{
+						font-size:$psp-questionText-link-fontSize;
+						font-weight:normal;
+						text-decoration:$psp-questionText-link-textDecoration;
+					}
+				}
+			}
+			.sBtn{
+				width:$psp-submitButton-width;
+				margin-right:$psp-submitButton-marginRight;
+			}
+			p{
+				line-height:$psp-p-lineHeight;
+			}
+		}
+		.skpTxt{
+			text-align:right;
+			margin:0;
+			padding:0;
+			height:20px;
+			
+			.skipLnk{
+				font-size:$pspSkipLink-fontSize;
+			}
+		}
+		.savLodr{
+			margin:$psp-saveLoader-margin;
+			display:none
+		}
+		.f11{
+			font-size:11px
+		}
+	}
+}
+@include pspBackgroundAnimation(".lbCntWrap_ims .pspFrmCnt .row.act", $pspActive-backgroundColor, $pspActive-backgroundColorAnim, $pspActive-borderColorAnim, $pspActive-animationTime);
+
+@include lightBoxAnimation(".lbCntWrap_ims .pspFrmCnt", 1s);

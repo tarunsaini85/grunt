@@ -1,0 +1,77 @@
+@mixin opacity($x){
+	filter:Alpha(opacity=$x*100);
+	opacity:$x;
+}
+
+@mixin gradient($start,$end,$fallback){
+	@if($fallback){
+		background : $fallback;
+	}
+	background : -moz-linear-gradient(top,  $start 0%, $end 100%);
+	background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$end));
+	background : -webkit-linear-gradient(top,  $start 0%,$end 100%);
+	background : -o-linear-gradient(top,  $start 0%,$end 100%);
+	background : -ms-linear-gradient(top,  $start 0%,$end 100%);
+	background : linear-gradient(to bottom,  $start 0%,$end 100%);
+	filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$start}', endColorstr='#{$end}',GradientType=0);
+}
+
+@mixin loadingTextAnimation($selector1){
+	@keyframes loadingText {0% {width:0px}10%{width : 51px}70%{width : 51px}90% {width : 0px}100%{width:0px}}
+	@-webkit-keyframes loadingText {0% {width:0px}10%{width : 51px}70%{width : 51px}90% {width : 0px}100%{width:0px}}
+	#{$selector1}{
+		animation:loadingText 3s ease 0s infinite;
+		-webkit-animation:loadingText 3s ease 0s infinite;
+	}
+}
+
+@mixin border-radius($val){
+	border-radius:$val;
+	-moz-border-radius:$val;
+	-webkit-border-radius:$val;
+}
+
+
+@mixin lightBoxAnimation($selector3,$time2){
+	@keyframes lightBoxAnim{
+		0%{opacity:0;margin-top:-10px}
+		40%{margin-top:inherit}
+		100%{opacity:1}
+	}
+	@-webkit-keyframes lightBoxAnim{
+		0%{opacity:0;margin-top:-10px}
+		40%{margin-top:inherit}
+		100%{opacity:1}
+	}
+	#{$selector3}{
+		animation:lightBoxAnim $time2;
+		-webkit-animation:lightBoxAnim $time2
+	}
+}
+
+
+@mixin pspBackgroundAnimation($selector2,$bgColor,$bgColorAnim,$borderColor,$time1){
+	@keyframes BGAnim{
+		0%{background:$bgColor}
+		50%{border-color:$borderColor;background:$bgColorAnim}
+		100%{background:$bgColor}
+	}
+	@-webkit-keyframes BGAnim{
+		0%{background:$bgColor}
+		50%{border-color:$borderColor;background:$bgColorAnim}
+		100%{background:$bgColor}
+	}
+	#{$selector2}{
+		animation:BGAnim #{$time1};
+		-webkit-animation:BGAnim #{$time1};
+	}
+}
+
+@mixin leftRowLineHeightHack($lhVal){
+	.lh#{$lhVal}{
+		line-height:#{$lhVal}px;
+	}
+	.lh#{$lhVal}Ie7{
+		#{"!"}line-height:#{$lhVal}px;
+	}
+}

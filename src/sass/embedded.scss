@@ -1,0 +1,52 @@
+@import '_variables';
+@import '_mixins';
+@import '_extends';
+
+
+.fR {float:right}
+.fL {float:left}
+.lbCntWrap_ims{
+	font-family:$font-family;
+	font-size:$lightBox-fontSize;
+	width : $embedded-container-width;
+	margin:0 auto;
+	
+	h2,p{
+		margin:0; padding:0
+	}
+	
+	h2{
+		font-size:$embedded-heading-fontSize;
+		padding:5px 10px 20px;
+		color : $embedded-heading-color;
+	}
+	a{
+		color:$lightBox-linkColor;
+		text-decoration:none;
+	}
+	.imsLBBtn1{
+		color:#fff;
+		font-size:15px;
+		float:left;
+		padding:6px 15px;
+		margin:0 15px 0 0;
+		cursor:pointer;
+		border:none;
+		@include border-radius($lightBox-buttonRadius);
+		@include gradient($lightBox-button-grad-start,$lightBox-button-grad-end,$lightBox-button-grad-fallback);
+		
+		&:hover{
+			@include gradient($lightBox-button-grad-hover-start,$lightBox-button-grad-hover-end,$lightBox-button-grad-hover-fallback);
+		}
+	}
+	.skipLnk{
+		font-size:$skipLink-fontSize;
+		line-height:30px;
+		text-decoration:underline;
+		float:left
+	}
+	.savLodr{
+		margin:4px 3px 0;
+		display:none;
+	}
+}

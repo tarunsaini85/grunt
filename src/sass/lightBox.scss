@@ -1,0 +1,117 @@
+@import '_variables';
+@import '_mixins';
+@import '_extends';
+
+.layer{
+	@extend %TL0;
+	width:100%;
+	height:100%;
+	background:$lightbox-background;
+	position:absolute;
+	z-index:1000;
+	@include opacity($lightbox-background-opacity);
+}
+
+.viewout1{
+	left : -5000px;
+	position:absolute;
+	
+	&:hover{
+		border:solid red;
+	}
+}
+
+.ifrm{
+	@extend %TL0;
+	border:none;
+	width:100%;
+	@include opacity(0);
+	position:absolute;
+	z-index:99;
+}
+
+.fR {float:right}
+
+.fL {float:left}
+
+.lbWrap{
+	background:$lightbox-foreground;
+	position:absolute;
+	
+	.closeBtn{
+		background:url(#{$image-path}imsIcns1.png);
+		position:absolute;
+		width:25px;
+		height:25px;
+		top:6px;
+		right:5px;
+	}
+}
+
+.lbCntWrap_ims{
+	font-family:$font-family;
+	font-size:$lightBox-fontSize;
+	
+	h2,p{
+		margin:0; padding:0
+	}
+	
+	h2{
+		font-size:$lightBox-heading-fontSize;
+		border-bottom:1px solid $lightBox-heading-borderColor;
+		padding:5px 10px;
+		@include gradient($lightBox-heading-grad-start,$lightBox-heading-grad-end,$lightBox-heading-grad-fallback);
+	}
+	.lbCnt1{
+		margin:20px 10px;
+	}
+	a{
+		color:$lightBox-linkColor;
+		text-decoration:none;
+	}
+	.imsLBBtn1{
+		color:#fff;
+		font-size:15px;
+		float:left;
+		padding:6px 15px;
+		margin:0 15px 0 0;
+		cursor:pointer;
+		border:none;
+		@include border-radius($lightBox-buttonRadius);
+		@include gradient($lightBox-button-grad-start,$lightBox-button-grad-end,$lightBox-button-grad-fallback);
+		
+		&:hover{
+			@include gradient($lightBox-button-grad-hover-start,$lightBox-button-grad-hover-end,$lightBox-button-grad-hover-fallback);
+		}
+	}
+	.skipLnk{
+		font-size:$skipLink-fontSize;
+		line-height:30px;
+		text-decoration:underline;
+		float:left
+	}
+	.savLodr{
+		margin:4px 3px 0; display:none
+	}
+	.lodr{
+		background:transparent url(#{$image-path}inlineLoader.gif) center center no-repeat;
+		height:16px;
+		width:16px;
+		display:none;
+		margin:0 auto
+	}
+	button{
+		&.loader{
+			.lodr{display:block}
+			.txt{display:none}
+			}
+	}
+}
+
+@include loadingTextAnimation("em.trigLoad");
+em.trigLoad{
+	width:$loadingText-width;
+	margin:0 auto;
+	display:block;
+	overflow:hidden;
+}

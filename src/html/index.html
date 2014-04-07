@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login Widget</title>
+<!--<style type="text/css">
+	body{margin:0; padding:0}
+	.wrap{width:980px; margin:0 auto}
+	.head, .foot{background:#eaeaea; height:100px}
+	.mid{overflow:hidden}
+	.midL{background:#f5f5f5; height:500px; width:700px; float:left}
+	.midR{background:#E8F7FF; height:500px; width:260px; padding:0 9px; float:right}
+	.ctr{width:270px; margin:20px auto 0; font-family:Arial, Helvetica, sans-serif; font-size:12px}
+</style>-->
+<!-- link rel="stylesheet" type="text/css" href="c/p0Widget.css" / -->
+</head>
+
+<body>
+	<div class="wrap head"></div>
+    <div class="wrap mid">
+    	<div class="midL">
+        	<div class="ctr wdgCntnr" id="wdgCont"></div>
+        </div>
+        <div class="midR">
+        	<!--<div class="wdgCntnr" id="wdgCont"></div>-->
+        </div>
+    </div>
+    <div class="wrap foot"></div>
+<script type="text/javascript" src="j/naukri_framework_v1.3.js"></script>
+<script type="text/javascript" src="j/p0Widget_v2.js"></script>
+<script type="text/javascript">
+	p0Widget.init({
+		id : "wdgCont",
+		tabs : ["register","login"],
+		//tabs : ['regisTer|Register with Naukri','login|Login Title'],
+		//loggedIn : {email:'user11@mail.com',diffLoginHref:'#'},//{username:'user12345',diffLoginHref:'#'},
+		//loggedIn : {username:'user12345',diffLoginHref:'#'},
+		//serverError : {html:'Invalid Details. Please check the EmailID-Password combination.'},
+		activeTab : 'login',
+		regForm : {Name:'regFormN',id:'regFormI',action:'http://naukri.com',method:'get'},
+		logForm : {Name:'logFormN',id:'logFormI',action:'#',method:'get'},
+		termsLink : {href:"http://jobsearch.naukri.com/mynaukri/mn_termsconditions.php",target:'_blank'},
+		forgotLink : {href:"http://login.naukri.com/nLogin/forgotpass.php",target:'_blank'},
+		regHiddens : [
+			{Name:'rhdN1',id:'rhdI1',value:'Reg HD value 1'},
+			{Name:'rhdN2',id:'rhdI2',value:'Reg HD value 2'}
+		],
+		logHiddens : [
+			{Name:'lhdN1',id:'lhdI1',value:'Log HD value 1'},
+			{Name:'lhdN2',id:'lhdI2',value:'Log HD value 2'}
+		],
+		//baseUrls : {c:"http://dev1.infoedge.com/tarun/p0/p0Widget.css"}
+		baseUrls : {c:"c/p0Widget.css"},
+		registerAjax : {url : "http://localhost:8080"},
+		//registerAjax : {url : "http://localhost:8080", timeOut : 5000},
+		errList : {
+			emailReq : 'Email Required',
+			reEmailReq : 'RE-Email Required',
+			emailFormat : 'Enter valid email',
+			emailsCompare : '"Re-Enter Email" does not match with "Email"',
+			passReq: 'Password Required',
+			passLength : 'Password should be minimum 6 characters long',
+			passFormat : 'Special characters other than (hyphen underscore dot @) are not allowed',
+			termsReq : 'Please agree to the terms and conditions to continue',
+			userReq : 'Username Required'
+		},
+		additionalText : {
+			title:'New to naukri.com? <a href="http://www.naukri.com/tieups/tieups.php?othersrcp=5421">Become a member</a>',
+			points : [
+				'Apply in one click to more than 1,00,000 jobs',
+				'Get headhunted by over 35,000 recruiters',
+				'Get job alerts in your inbox and your mobile',
+				'Access jobs while on the move through SMS',
+				'Control who accesses your resume'
+			]
+		}
+	});
+	
+	
+	/*function myCallBack(resp){
+		if(jsonP.timeOut){console.log(resp)}
+		else{console.log("Timeout!!!")}
+	}
+	
+	jsonP.init({
+		url : "http://localhost:8080?asd=fgh",
+		callback : "myCallBack"//,timeOut : 35
+	})*/
+</script>
+</body>
+</html>

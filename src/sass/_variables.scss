@@ -1,0 +1,88 @@
+//LightBox Variables-----------------------------------------
+$font-family : "Arial", Helvetica, sans-serif;
+$lightBox-fontSize : 12px;
+
+$lightbox-background : #000;
+$lightbox-foreground : #fff;
+$lightbox-background-opacity : 0.6;
+
+$lightBox-heading-fontSize : 22px;
+$lightBox-heading-color : #444;
+$lightBox-heading-borderColor : #a2a2a2;
+$lightBox-heading-grad-start : #fff;
+$lightBox-heading-grad-end : #ededed;
+$lightBox-heading-grad-fallback : #ededed;
+
+$lightBox-linkColor : #36F;
+
+$lightBox-buttonFontColor : #fff;
+$lightBox-buttonFontSize : 15px;
+$lightBox-buttonRadius : 10px;
+$lightBox-button-grad-start : #69b8fd;
+$lightBox-button-grad-end : #2186e2;
+$lightBox-button-grad-fallback : #409bee;
+$lightBox-button-grad-hover-start : #51a2e8;
+$lightBox-button-grad-hover-end : #0f71cb;
+$lightBox-button-grad-hover-fallback : #2581d0;
+
+$skipLink-fontSize : 14px;
+
+$loadingText-width : 42px;
+
+$image-path : "../i/";
+
+//Form Variables----------------------------------------------
+$form-container-padding : 10px;
+$form-width : 90%;
+$form-row-padding : 6px 0;
+$form-row-fontSize : 12px;
+$form-row-fontColor : #444;
+
+//QUP Variables----------------------------------------------
+$qup-row-left-width : 29%;
+$qup-row-left-fontSize : 14px;
+$qup-row-left-lineHeight : 35px;
+$qup-row-right-width : 70%;
+$qup-row-right-helpText-fontSize : 11px;
+$qup-row-right-helpText-color : #9E9E9E;
+$qup-formElements-border : 1px solid #d8d8d8;
+$qup-formElements-borderRadius : 3px;
+$qup-textbox-width : 70%;
+$qup-textbox-padding : 7px 3px;
+$qup-textarea-width : 69%;
+$qup-textarea-padding : 4px;
+$qup-select-padding : 8px 3px;
+$qup-select-width-1 : 20%;
+$qup-select-width-2 : 71%;
+$qup-row-right-label-margin : auto 10px auto 5px;
+$qup-row-right-sections-width : 50%;
+$qup-row-right-sections-right-width : 160px;
+$qup-row-right-sections-right-fontSize : 10px;
+$qup-row-right-sections-right-color : #9E9E9E;
+
+
+//PSP Variables----------------------------------------------
+$pspActive-backgroundColor : #fafafa;
+$pspActive-backgroundColorAnim : #f0f0f0;
+$pspActive-borderColor : #eaeaea;
+$pspActive-borderColorAnim : #aaa;
+$pspActive-borderRadius : 5px;
+$pspActive-animationTime : 2s;
+$pspSkipLink-fontSize : 11px;
+$psp-row-left-width : 5%;
+$psp-row-left-fontSize : 14px;
+$psp-row-left-lineHeight : 35px;
+$psp-row-right-width : 90%;
+$psp-questionText-fontSize : 13px;
+$pspActive-questionText-fontColor : #05a30e;
+$psp-questionText-link-fontSize : 11px;
+$psp-questionText-link-textDecoration : underline;
+$psp-submitButton-width:81px;
+$psp-submitButton-marginRight:5px;
+$psp-saveLoader-margin : 6px 3px 0;
+$psp-p-lineHeight : 19px;
+
+//Embedded Variables------------------------------------------
+$embedded-container-width : 882px;
+$embedded-heading-color : #444;
+$embedded-heading-fontSize : 18px;

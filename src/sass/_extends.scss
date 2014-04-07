@@ -1,0 +1,30 @@
+%TL0{top:0;left:0}
+
+%formContainer{
+	margin:0;
+	padding:$form-container-padding;
+	position:relative;
+}
+
+%formStyle{
+	width:100%;
+	margin:0 auto;
+	padding:0;
+}
+
+%formRow{
+	width:100%;
+	overflow:hidden;
+	padding:$form-row-padding;
+	font-family:$font-family;
+	font-size:$form-row-fontSize;
+	color:$form-row-fontColor;
+}
+
+%formElementsStyle-qup{
+	border:$qup-formElements-border;
+	border-radius:$qup-formElements-borderRadius;
+	font-family:$font-family;
+	font-size:$form-row-fontSize;
+	color:$form-row-fontColor;
+}
